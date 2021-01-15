@@ -17,7 +17,10 @@ var app = express();
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb+srv://kulv_admin:v1iYyysIHgJbdgeb@clustervid.r7g14.mongodb.net/local_library';
+// var dev_db_url = 'mongodb+srv://local_library_user:L1zRFKZFtKqkuH6u@clustervid.r7g14.mongodb.net/local_library?retryWrites=true&w=majority';
+
+var dev_db_url = 'mongodb://local_library_user:L1zRFKZFtKqkuH6u@clustervid-shard-00-00.r7g14.mongodb.net:27017,clustervid-shard-00-01.r7g14.mongodb.net:27017,clustervid-shard-00-02.r7g14.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-9voz5a-shard-0&authSource=admin&retryWrites=true&w=majority';
+
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
